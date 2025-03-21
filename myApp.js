@@ -1,54 +1,27 @@
-require('dotenv').config()
-let express = require('express');
-let app = express();
+require('dotenv').config();
+const express = require('express');
+const path = require('path');
+
+const app = express();
 console.log("Hello World");
 
-path = __dirname + '/views/index.html'
+const filePath = path.join(__dirname, 'views', 'index.html');
 let message = process.env.MESSAGE_STYLE === "uppercase" ? "HELLO JSON" : "Hello json";
 
 app.get("/", (req, res) => {
-    res.sendFile(path);
-  });
-
-app.use("/public", express.static(__dirname + "/public"));
-
-/**if (process.env.MESSAGE_STYLE === "uppercase") {
-  message = "HELLO JSON";
-  console.log("I am not insane")
-} else {
-  console.log("Why isn't it working")
-}**/
-
-app.get("/json", (req, res) => {
-  res.json({
-    response: message
-  });
+  res.sendFile(filePath);
 });
 
+app.use("/public", express.static(path.join(__dirname, "public")));
 
+app.get("/json", (req, res) => {
+  res.json({ response: message });
+});
 
+// Ensure server is listening
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
+module.exports = app;
