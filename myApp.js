@@ -18,10 +18,6 @@ app.get("/json", (req, res) => {
   res.json({ response: message });
 });
 
-// Ensure server is listening
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
 
 module.exports = app;
