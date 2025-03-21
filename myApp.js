@@ -1,3 +1,4 @@
+require('dotenv').config()
 let express = require('express');
 let app = express();
 console.log("Hello World");
@@ -10,7 +11,9 @@ app.get("/", (req, res) => {
 
 app.use("/public", express.static(__dirname + "/public"));
 
-
+if (process.env.MESSAGE_STYLE == "uppercase"){
+  message = message.toUpperCase
+}
 
 app.get("/json", (req, res) => {
   res.json({
