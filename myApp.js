@@ -1,23 +1,54 @@
-require('dotenv').config();
-const express = require('express');
-const path = require('path');
-
-const app = express();
+require('dotenv').config()
+let express = require('express');
+let app = express();
 console.log("Hello World");
 
-const filePath = path.join(__dirname, 'views', 'index.html');
-let message = process.env.MESSAGE_STYLE === "uppercase" ? "HELLO JSON" : "Hello json";
+path = __dirname + '/views/index.html'
+var message = "Hello json"
 
 app.get("/", (req, res) => {
-  res.sendFile(filePath);
-});
+    res.sendFile(path);
+  });
 
-app.use("/public", express.static(path.join(__dirname, "public")));
+app.use("/public", express.static(__dirname + "/public"));
+
+if (process.env.MESSAGE_STYLE === "uppercase") {
+  message = "HELLO JSON";
+  console.log("I am not insane")
+} else {
+  console.log("Why isn't it working")
+}
 
 app.get("/json", (req, res) => {
-  res.json({ response: message });
+  res.json({
+    response: message
+  });
 });
 
 
 
-module.exports = app;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ module.exports = app;
