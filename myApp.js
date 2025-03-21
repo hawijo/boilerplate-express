@@ -19,9 +19,11 @@ if (process.env.MESSAGE_STYLE === "uppercase") {
   console.log("Why isn't it working")
 }
 
+var mess = {"response" : message}
+
 app.get("/json", (req, res) => {
   res.json({
-    response: message
+    response: mess
   });
 });
 
