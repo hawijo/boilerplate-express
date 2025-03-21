@@ -4,7 +4,7 @@ let app = express();
 console.log("Hello World");
 
 path = __dirname + '/views/index.html'
-var response = "Hello json"
+var message = "Hello json"
 
 app.get("/", (req, res) => {
     res.sendFile(path);
@@ -12,17 +12,16 @@ app.get("/", (req, res) => {
 
 app.use("/public", express.static(__dirname + "/public"));
 
-if (process.env.MESSAGE_STYLE === "upprcase") {
-  response = "HELLO JSON";
+if (process.env.MESSAGE_STYLE === "uppercase") {
+  message = message.toUpperCase();
   console.log("I am not insane")
 } else {
-  response = "Hello json";
   console.log("Why isn't it working")
 }
 
 app.get("/json", (req, res) => {
   res.json({
-    message : response
+    response: message
   });
 });
 
