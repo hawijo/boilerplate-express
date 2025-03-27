@@ -30,13 +30,16 @@ app.get("/json", (req, res) => {
   res.json({ "message": message });
 });
 
-
-app.get('/now', (req, res, next) => {
-  req.time = new Date().toString();  
-  next();
-}, function(req, res) {
-  res.json(req.time);
-});
+app.get("/now",(req, res, next) => {
+    req.time = new Date().toString();
+    next();
+  },
+  (req, res) => {
+    res.send({
+      time: req.time
+    });
+  }
+);
 
 
 
