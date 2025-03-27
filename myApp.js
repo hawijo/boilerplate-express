@@ -6,6 +6,13 @@ console.log("Hello World");
 path = __dirname + '/views/index.html'
 var message = "Hello json"
 
+
+app.use(function middleware(req, res, next) {
+  var string = req.method + " " + req.path + " - " + req.ip;
+  console.log(string)
+  next();
+});
+
 app.get("/", (req, res) => {
     res.sendFile(path);
   });
