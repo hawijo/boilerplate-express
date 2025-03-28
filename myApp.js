@@ -7,6 +7,7 @@ path = __dirname + '/views/index.html'
 var message = "Hello json"
 
 
+
 app.use(function middleware(req, res, next) {
   var string = req.method + " " + req.path + " - " + req.ip;
   console.log(string)
@@ -35,7 +36,7 @@ app.get("/now",(req, res, next) => {
     next();
   },
   (req, res) => {
-    res.send({
+    res.json({
       time: req.time
     });
   }
@@ -56,8 +57,13 @@ app.get("/:word/echo", (req, res, next) => {
 );
 
 
-
-
+app.get("/name", (req, res) => {
+  console.log(req.query.first, req.query.last);
+  var full = req.query.first + " " + req.query.last
+  res.json({
+    name: full
+  })
+})
 
 
 
