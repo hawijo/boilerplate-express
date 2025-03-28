@@ -1,16 +1,18 @@
-require('dotenv').config()
+require('body-parser');
+require('dotenv').config();
 let express = require('express');
+let bodyParser = require('body-parser')
 let app = express();
 console.log("Hello World");
 
-path = __dirname + '/views/index.html'
-var message = "Hello json"
+path = __dirname + '/views/index.html';
+var message = "Hello json";
 
 
 
 app.use(function middleware(req, res, next) {
   var string = req.method + " " + req.path + " - " + req.ip;
-  console.log(string)
+  console.log(string);
   next();
 });
 
@@ -59,14 +61,14 @@ app.get("/:word/echo", (req, res, next) => {
 
 app.get("/name", (req, res) => {
   console.log(req.query.first, req.query.last);
-  var full = req.query.first + " " + req.query.last
+  var full = req.query.first + " " + req.query.last;
   res.json({
     name: full
-  })
+  });
 })
 
 
-
+app.use(bodyParser.urlencoded({extended: false}))
 
 
 
