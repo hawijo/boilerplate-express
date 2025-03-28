@@ -9,7 +9,7 @@ path = __dirname + '/views/index.html';
 var message = "Hello json";
 
 
-
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(function middleware(req, res, next) {
   var string = req.method + " " + req.path + " - " + req.ip;
   console.log(string);
@@ -68,7 +68,7 @@ app.get("/name", (req, res) => {
 })
 
 
-app.use(bodyParser.urlencoded({extended: false}))
+
 
 
 
