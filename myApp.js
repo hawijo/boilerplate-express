@@ -1,4 +1,3 @@
-require('body-parser');
 require('dotenv').config();
 let express = require('express');
 let bodyParser = require('body-parser')
@@ -9,7 +8,8 @@ path = __dirname + '/views/index.html';
 var message = "Hello json";
 
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
+
 app.use(function middleware(req, res, next) {
   var string = req.method + " " + req.path + " - " + req.ip;
   console.log(string);
@@ -67,7 +67,10 @@ app.get("/name", (req, res) => {
   });
 })
 
-
+app.post("/name", (req, res) => {
+  var full = req.body.first + " " + req.body.last;
+  res.json({ name: full });
+});
 
 
 
