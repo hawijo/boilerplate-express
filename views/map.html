@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift Guard Accident Location</title>
+    <link rel="icon" href="images\logo.ico" type="image/ico">
+    <link rel="stylesheet" href="../public/map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-image"></div>
+    <header>
+        <h1>Swift Guard Accident Location</h1>
+    </header>
+
+    <div class="sidebar">
+        <nav>
+            <a href="/loggedin">Home</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <main>
+            <div id="map-controls">
+                <button id="get-location-btn">Get Current Location</button>
+                <button id="show-latest-data-btn">Alert Location</button>
+            </div>
+            <div id="map-container">
+                <div id="map"></div>
+                <div id="map-error" class="hidden">No map found.</div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AstroWorld Industries. All rights reserved.</p>
+    </footer>
+
+   
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="../jscript/map.js"></script>
+</body>
+</html>

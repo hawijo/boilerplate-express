@@ -18,21 +18,21 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../public/style.css" />
-    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   </head>
   <body>
     <nav class="navbar">
       <div class="container">
         <div class="logo">
           <a href="/">
-            Swift Guard
+            Swift guard
           </a>
         </div>
 
         <div class="main-menu">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <a href="#">Home</a>
             </li>
             <li>
               <a href="#aboutus">About Us</a>
@@ -44,7 +44,8 @@
               <a class="btn" href="/getaquote"> <i class="fas fa-money-check"></i>Get A Quote</a>
             </li>
             <li>
-              <a class="btn" href="/login"> <i class="fas fa-user"></i> Log In/Register </a>
+              <!--Profile-->
+              <a class="btn" href="/"> <i class="fa-solid fa-address-card"></i>Logout</a>
             </li>
           </ul>
         </div>
@@ -57,7 +58,7 @@
         <div class="mobile-menu">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <a href="#">Home</a>
             </li>
             <li>
               <a href="#aboutus">About Us</a>
@@ -68,9 +69,16 @@
             <li>
               <a class="btn" href="/getaquote"><i class="fas fa-money-check"></i>Get A Quote</a>
             </li>
-            <li>
-              <a class="btn" href="/login"> <i class="fas fa-user"></i> Login/Register </a>
-            </li>
+            <div class="dropdown">
+              <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div>
           </ul>
         </div>
       </div>
@@ -81,13 +89,13 @@
         <div class="hero-content">
           <div class="hero-image">
             <h1 class="hero-heading text-xxl">
-              Swift Guard
+              Swift guard
             </h1>
             <h3 class="hero-text text-xl">
               Fast accident warning because every second matters.
             </h3>
             <div class="hero-buttons">
-              <a href="/login" class="btn btn-primary">Get Started</a>
+              <a href="/map" class="btn btn-primary">Go To Map</a>
               <!--<a href="#" class="btn"
                 ><i class="fas fa-mobile"></i> Available for mobile</a
               >
@@ -97,7 +105,7 @@
       </div>
     </section>
     <!-- Video Section -->
-    <section class="video bg-black" id="aboutus">
+    <section class="video bg-black">
       <div class="container-sm">
         <h2 class="video-heading text-xl ">
           Immediate emergency response
@@ -107,12 +115,12 @@
         </p>
         <div class="video-content">
             <img
-              src="../images/patient.png"
+              src="images/patient.png"
               alt="video"
               class="video-preview"
             />
 
-          <a href="/login" class="btn btn-primary">Go To Map</a>
+          <a href="/map" class="btn btn-primary">Go To Map</a>
         </div>
       </div>
     </section>
@@ -127,7 +135,7 @@
         </p>
         <div class="testimonials-grid">
           <div class="card">
-            <img src="../images/crash-alert-device.png">
+            <img src="images/crash-alert-device.png">
             
             <h3>
               Industry-leading hardware
@@ -140,7 +148,7 @@
           </div>
 
           <div class="card">
-            <img src="../images/crash-alert-immediate-response.png">
+            <img src="images/crash-alert-immediate-response.png">
             <h3>
               Immediate response
             </h3>
@@ -152,7 +160,7 @@
           </div>
 
           <div class="card">
-            <img src="../images/crash-alert-analysis.png">
+            <img src="images/crash-alert-analysis.png">
             <h3>
               Advanced AI analysis
             </h3>
@@ -333,7 +341,7 @@
         <div class="footer-grid">
           <div>
             <!--<a href="index.html">
-              <img src="../images/logos-white.png" alt="logo" />
+              <img src="images/logos-white.png" alt="logo" />
             </a>-->
           <!--<div class="card">
               <h4>Subscribe to Newsletter</h4>
@@ -349,8 +357,6 @@
             </div>-->
             <i class="fab fa-linkedin"></i>
             <i class="fab fa-twitter"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-instagram"></i>
           </div>
           <div>
             <h4>Company</h4>
@@ -362,15 +368,15 @@
           <div>
             <h4>Resources</h4>
             <ul>
-              <li><a href="https://careers.un.org/" target="_blank">United Nations</a></li>
-              <li><a href="https://www.globalroadsafetyfacility.org/" target="_blank">Global Road Safety Facility</a></li>
+              <li><a href="https://careers.un.org/">United Nations</a></li>
+              <li><a href="https://www.globalroadsafetyfacility.org/">Global Road Safety Facility</a></li>
             </ul>
           </div>
           <div>
             <h4>Contact</h4>
             <ul>
               <li>
-                <a href="#">hello@swiftguard.com</a>
+                <a href="#">hello@crashaid.com</a>
               </li>
             </ul>
           </div>

@@ -5,6 +5,11 @@ let app = express();
 console.log("Hello World");
 
 path = __dirname + '/views/index.html';
+getaquote = __dirname + '/views/get_a_quote.html';
+login = __dirname + '/views/login.html';
+loggedin = __dirname + '/views/loggedin.html'
+map = __dirname + '/views/map.html'
+signin = __dirname + '/views/signin.html'
 var message = "Hello json";
 
 
@@ -21,6 +26,8 @@ app.get("/", (req, res) => {
   });
 
 app.use("/public", express.static(__dirname + "/public"));
+app.use("/images", express.static(__dirname + "/images"));
+app.use("/jscript", express.static(__dirname + "/jscript"))
 
 
 
@@ -44,40 +51,26 @@ app.get("/now",(req, res, next) => {
   }
 );
 
-app.get("/:word/echo", (req, res, next) => {
-  console.log(req.params.word);
-  next(); 
-  },
-  
-  (req, res) => {
-    res.json({
-      echo: req.params.word
-    });
-  }
 
-
-);
-
-
-app.get("/name", (req, res) => {
-  console.log(req.query.first, req.query.last);
-  var full = req.query.first + " " + req.query.last;
-  res.json({
-    name: full
-  });
-})
-
-app.post("/name", (req, res) => {
-  var full = req.body.first + " " + req.body.last;
-  res.json({ name: full });
+app.get("/getaquote", (req, res) => {
+  res.sendFile(getaquote);
 });
 
+app.get("/signin", (req, res) => {
+  res.sendFile(signin);
+});
 
+app.get("/login", (req, res) => {
+  res.sendFile(login);
+});
 
+app.get("/loggedin", (req, res) => {
+  res.sendFile(loggedin);
+});
 
-
-
-
+app.get("/map", (req, res) => {
+  res.sendFile(map);
+});
 
 
 
